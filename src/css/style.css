@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+	font: inherit;
+}
+
+:root {
+	font-size: 62.5%;
+	font-family: "Akaya Kanadaka";
+	word-spacing: 10px;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(0, 0, 0, 0.657),
+			rgba(0, 0, 0, 0.479)
+		),
+		url("../img/bg.jpg");
+
+	backdrop-filter: blur(0.5rem);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: white;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.main__title {
+	margin-bottom: 8rem;
+	text-shadow: 0 0.5rem 1rem #000;
+	text-align: center;
+	font-size: 5rem;
+	font-variant: small-caps;
+	font-weight: 100;
+}
+
+.main__output {
+	display: flex;
+	width: 60%;
+	margin: 4rem auto;
+	border-radius: 2rem;
+	background-color: rgba(34, 34, 34, 0.39);
+	box-shadow: 0 4px 10px rgb(0, 0, 0);
+	text-align: center;
+	padding: 1rem 1.5rem;
+	padding-left: 4rem;
+	line-height: 2rem;
+}
+
+.main__output i {
+	font-size: 3rem;
+	margin-left: 2rem;
+}
+
+.active {
+	letter-spacing: 1rem;
+	font-family: "Open Sans";
+	font-size: 5rem;
+}
+
+.main__output .output__password {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5rem;
+}
+
+.placeholder {
+	color: #999;
+	word-spacing: 0;
+}
+
+.btn--generate {
+	text-transform: uppercase;
+	margin: 0 auto;
+	padding: 0.5rem 4rem;
+	line-height: 1.5;
+	word-spacing: 5px;
+	font-size: 2.5rem;
+	border-radius: 10rem;
+	background-color: rgb(36, 129, 75);
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.52);
+	transition: background-color 0.2s, color 0.2s;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.btn--generate:hover {
+	background-color: rgb(74, 241, 144);
+	color: #222;
+}
+
+.btn--generate:active {
+	background-color: white;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltip__text {
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+	word-spacing: 0;
+	width: 120px;
+	background-color: rgb(180, 180, 180);
+	color: black;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -60px;
+	transition: opacity 0.3s;
+	line-height: 1.5;
+}
+
+.tooltip .tooltip__text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 2rem;
+	opacity: 0.6;
+	z-index: -1;
+}
+
+@media only screen and (max-width: 1024px) {
+	.main {
+		flex: 1;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	:root {
+		font-size: 40%;
+	}
+	.main__title {
+		font-size: 3.5rem;
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	.main__output {
+		width: 90%;
+	}
+}
